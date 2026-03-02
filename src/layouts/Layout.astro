@@ -1,0 +1,116 @@
+---
+import "../styles/global.css";
+import Header from "../layouts/Header.astro";
+import Footer from "../layouts/Footer.astro";
+const {
+  title = "",
+  description = "Psychothérapie philosophique à Toulouse avec Quelqu'un. Accompagnement en cabinet ou à distance.",
+  withBgImage = true,
+} = Astro.props;
+
+const fullTitle = title
+  ? `${title} – Quelqu'un`
+  : "Quelqu'un – Psychothérapie philosophique à Toulouse";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={Astro.url.href} />
+    <meta name="robots" content="index, follow" />
+    <meta name="geo.region" content="FR-31" />
+    <meta name="geo.placename" content="Toulouse" />
+    <title>{fullTitle}</title>
+  </head>
+  <body class="bg-primary pt-20">
+    <Header />
+    <main
+      class={withBgImage
+        ? "md:bg-[url('/public/imagefond.png')] md:bg-center md:bg-no-repeat md:bg-fixed md:bg-size-[72%] md:relative"
+        : "relative"}
+    >
+      <div class="md:absolute md:inset-0 md:bg-primary/20"></div>
+      <div class="relative">
+        <slot />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  // Gestion du menu de navigation pour souligner la section active
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll("nav a[data-link]");
+
+  function onScroll() {
+    let current = "";
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 150 && rect.bottom >= 150) {
+        current = section.id;
+      }
+    });
+
+    const navLinks = document.querySelectorAll<HTMLAnchorElement>("nav a");
+
+    navLinks.forEach((link) => {
+      link.classList.remove("underline");
+      if (link.dataset.link === current) {
+        link.classList.add("underline");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", onScroll);
+  onScroll(); // pour le premier chargement
+
+  // Gestion de l'accordéon pour n'ouvrir qu'une seule card à la fois
+  document.addEventListener("DOMContentLoaded", () => {
+    const allDetails = document.querySelectorAll("details");
+
+    allDetails.forEach((details) => {
+      details.addEventListener("toggle", () => {
+        if (details.open) {
+          // Fermer toutes les autres cards
+          allDetails.forEach((other) => {
+            if (other !== details && other.open) {
+              other.open = false;
+            }
+          });
+
+          // Scroll automatique vers la partie texte
+          const content = details.querySelector("div"); // première div interne
+          if (content) {
+            setTimeout(() => {
+              content.scrollIntoView({
+                behavior: "smooth",
+                block: "end",
+              });
+            }, 100); // délai pour laisser l'animation s'ouvrir
+          }
+        }
+      });
+    });
+  });
+
+  // Gestion de l'affichage du logo dans le header au scroll sur mobile
+  const headerBrand = document.getElementById("header-brand");
+
+  if (headerBrand instanceof HTMLElement && window.innerWidth < 768) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 150) {
+        headerBrand.classList.remove("opacity-0", "-translate-y-2");
+        headerBrand.classList.add("opacity-100", "translate-y-0");
+      } else {
+        headerBrand.classList.add("opacity-0", "-translate-y-2");
+        headerBrand.classList.remove("opacity-100", "translate-y-0");
+      }
+    });
+  }
+</script>

@@ -1,0 +1,110 @@
+<header
+  class="bg-primary shadow-md shadow-[rgba(0,0,0,0.7)] h-20 text-secondary fixed top-0 w-full z-50 font-playfair will-change-transform will-change-opacity"
+>
+  <div class="container w-full flex justify-between items-center h-full">
+    <!-- Logo + titres -->
+    <div
+      class="flex items-center lg:-translate-x-8.75 -translate-x-3.75 opacity-0 -translate-y-2 transition-all duration-400 ease-out md:opacity-100 md:translate-y-0"
+      id="header-brand"
+    >
+      <a href="/">
+        <img
+          src="/logo2.svg"
+          alt="logo"
+          class="h-14 w-auto lg:h-20 lg:w-auto"
+        />
+      </a>
+      <div class="flex flex-col text-center ml-6 lg:ml-0 lg:text-left">
+        <span class="text-lg font-medium lg:text-xl lg:font-medium">
+          Quelqu'un
+        </span>
+        <span class="text-sm lg:text-xl lg:font-medium">
+          Philosophe thérapeutique
+        </span>
+      </div>
+    </div>
+
+    <!-- Desktop navigation -->
+    <nav class="hidden lg:block">
+      <ul class="flex space-x-7 font-medium">
+        <li>
+          <a href="/#accueil" data-link="accueil" class="hover:text-gray-400"
+            >ACCUEIL</a
+          >
+        </li>
+        <li>
+          <a
+            href="/#presentation"
+            data-link="presentation"
+            class="hover:text-gray-400">PRESENTATION</a
+          >
+        </li>
+        <li>
+          <a
+            href="/#consultations"
+            data-link="consultations"
+            class="hover:text-gray-400">CONSULTATIONS</a
+          >
+        </li>
+        <li><a href="/contact" class="hover:text-gray-400">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile burger button -->
+    <button
+      id="burger"
+      class="lg:hidden flex flex-col justify-center items-center gap-2 w-8 h-8 relative z-50"
+      aria-label="Menu"
+    >
+      <span
+        class="block w-7.5 h-0.5 bg-secondary transition-transform duration-300 origin-center"
+        id="line1"></span>
+      <span
+        class="block w-6 h-0.5 bg-secondary transition-opacity duration-300"
+        id="line2"></span>
+      <span
+        class="block w-7.5 h-0.5 bg-secondary transition-transform duration-300 origin-center"
+        id="line3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile navigation menu -->
+  <nav
+    id="mobile-menu"
+    class="lg:hidden overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out bg-primary border-t border-secondary/20"
+  >
+    <ul class="flex flex-col items-center gap-6 py-6 font-medium">
+      <li><a href="/#accueil" class="hover:text-gray-400">ACCUEIL</a></li>
+      <li>
+        <a href="/#presentation" class="hover:text-gray-400">PRESENTATION</a>
+      </li>
+      <li>
+        <a href="/#consultations" class="hover:text-gray-400">CONSULTATIONS</a>
+      </li>
+      <li><a href="/contact" class="hover:text-gray-400">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const burger = document.getElementById("burger") as HTMLButtonElement;
+  const menu = document.getElementById("mobile-menu") as HTMLElement;
+
+  burger.addEventListener("click", () => {
+    if (menu.style.maxHeight) {
+      menu.style.maxHeight = "";
+    } else {
+      menu.style.maxHeight = menu.scrollHeight + "px";
+    }
+
+    const line1 = document.getElementById("line1") as HTMLElement;
+    const line2 = document.getElementById("line2") as HTMLElement;
+    const line3 = document.getElementById("line3") as HTMLElement;
+
+    line1.classList.toggle("rotate-50");
+    line1.classList.toggle("translate-y-2.5");
+    line2.classList.toggle("opacity-0");
+    line3.classList.toggle("-rotate-50");
+    line3.classList.toggle("-translate-y-2.5");
+  });
+</script>

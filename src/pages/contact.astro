@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import cabinet from "../images/cabinet.jpg";
+---
+
+<Layout
+  withBgImage={false}
+  title="Contact pour prendre rendez-vous"
+  description="Prenez rendez-vous avec quelqu'un, psychothérapeute philosophique à Toulouse. Consultations au cabinet ou par vidéoconférence"
+>
+  <section class="w-full bg-secondary md:h-[45vh] container flex items-end">
+    <h1
+      class="md:text-5xl text-3xl text-white font-medium font-playfair pb-20 pt-5 md:pt-0"
+    >
+      Prendre rendez-vous <br />
+      <span class="sr-only">
+        avec quelqu'un, philosophe thérapeutique à Toulouse
+      </span>
+    </h1>
+  </section>
+  <section class="container my-5 md:flex">
+    <p class="md:text-3xl text-xl font-open-sans mr-5 text-justify font-normal">
+      “<span class="italic">Philosopher, c’est bon pour la santé.</span><br />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis sint aspernatur
+      facere repellat? Earum similique animi porro doloribus facilis! Amet placeat
+      porro voluptates qui corporis necessitatibus alias unde repudiandae? Aspernatur
+      ab perferendis quas error ullam suscipit rerum! Rerum quos aut nulla fugiat
+      velit tenetur omnis cupiditate, saepe harum ipsa molestiae, magnam animi dolorem
+      corrupti, reprehenderit consequuntur deserunt sunt voluptates.
+    </p>
+    <Image
+      src={cabinet}
+      title="Le cabinet"
+      alt="Cabinet de consultation de quelqu'un à Toulouse"
+      loading="eager"
+      fetchpriority="high"
+      class="md:w-[40vw] rounded-xl md:rounded-none h-auto mt-5 md:mt-0"
+    />
+  </section>
+
+  <section class="text-center text-2xl md:text-5xl font-playfair">
+    <address class="not-italic">
+      <p class="text-tertiary pt-10 font-medium">Par téléphone</p>
+      <a href="tel:+33760287270" class="hover:underline"> 02.69.15.88.40 </a>
+      <p class="text-tertiary pt-10 font-medium">Par mail</p>
+      <a href="mailto:quelqu'un@gmail.com" class="md:hover:underline">
+        quelqu'un@gmail.com
+      </a>
+      <p class="text-tertiary pt-10 font-medium">Le cabinet</p>
+      <p class="">10 rue d’Alsace-Lorraine, 31000 Toulouse</p>
+    </address>
+  </section>
+  <div class="relative w-full h-[60vh] py-10 mx-auto md:container">
+    <iframe
+      src="https://www.google.com/maps?q=10+Rue+d'Alsace+Lorraine,+31000+Toulouse&output=embed"
+      title="Map gps - adresse de quelqu'un pour consultation"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="w-full h-full"></iframe>
+  </div>
+</Layout>

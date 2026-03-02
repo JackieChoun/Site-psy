@@ -1,0 +1,332 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import botticeli from "../images/botticelli.jpg";
+import klimt from "../images/klimt.jpg";
+import rodin from "../images/rodin.jpg";
+import thisperson from "../images/thispersondoesnotexist.jpg";
+---
+
+<Layout
+  description="Psychothérapie philosophique à Toulouse avec Quelqu'un. Consultations individuelles, supervision et interventions en entreprise."
+>
+  <section
+    class="flex flex-col justify-center items-center md:items-stretch md:min-h-dvh h-auto gap-5 font-playfair text-tertiary scroll-mt-20 container"
+    id="accueil"
+  >
+    <div class="py-50 md:py-0 flex items-center">
+      <img src="logo2.svg" alt="" class="h-16 w-auto md:hidden" />
+      <h1 class="lg:text-4xl font-medium text-xl">
+        Quelqu'un <span class="sr-only">
+          Philosophe thérapeutique à Toulouse
+        </span>
+      </h1>
+    </div>
+    <h2 class="lg:text-3xl font-medium text-xl">
+      Philosophe Thérapeutique <br />
+      <span class="hidden md:block">à Toulouse</span>
+    </h2>
+    <h3 class="lg:text-2xl text-lg font-medium md:pl-10 pt-10 hidden md:block">
+      "Philosopher, c'est bon pour la santé."
+    </h3>
+    <div
+      class="lg:text-2xl text-lg text-center font-medium md:justify-end flex md:text-left"
+    >
+      <address class="flex flex-col not-italic">
+        <a href="mailto:quelqu'un@gmail.com" class="hover:underline">
+          quelqu'un@gmail.com
+        </a>
+
+        <a
+          href="https://maps.google.com/?q=27+Rue+d'Alsace+Lorraine,+31000+Toulouse"
+          target="_blank"
+          class="hover:underline"
+        >
+          10 rue d’Alsace-Lorraine
+        </a>
+
+        <a href="tel:+33760287270" class="hover:underline"> 02.66.24.72.74 </a>
+      </address>
+    </div>
+  </section>
+  <section class="scroll-mt-20 container" id="presentation">
+    <h2
+      class="font-playfair text-center md:text-left text-3xl lg:text-4xl font-medium text-secondary pb-3 pt-5 md:pt-0"
+    >
+      Présentation
+    </h2>
+    <div class="md:grid-cols-3 grid gap-5">
+      <Image
+        src={thisperson}
+        alt="Quelqu'un"
+        title="Moi"
+        class="md:col-span-1 md:col-start-3 rounded-xl md:rounded-none object-cover h-full w-full"
+      />
+      <p
+        class="bg-tertiary/90 md:col-start-1 md:row-start-1 rounded-xl md:rounded-none text-white font-light p-5 font-opensans md:col-span-2 md:text-justify"
+      >
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem
+        suscipit recusandae mollitia! Commodi, fuga eos nisi ad odio nesciunt
+        itaque autem voluptatibus. Non cupiditate eum laboriosam excepturi
+        laudantium labore unde. Repellendus facilis officiis ex nam odio
+        doloremque labore possimus neque distinctio a voluptates eos incidunt
+        quam repudiandae omnis nostrum modi blanditiis laboriosam, consectetur
+        quidem pariatur impedit. Animi qui temporibus accusamus. Iste veritatis
+        consequuntur, sint, autem impedit pariatur ipsa nesciunt ipsam
+        dignissimos iure at consequatur fugiat animi quod asperiores distinctio
+        in! Magnam nihil rerum voluptatibus, molestias provident consequatur
+        illum est ex? Odit, ea quod? Illum perferendis, totam voluptate eius ex
+        aperiam eos, corporis labore sunt, pariatur rem similique. Beatae,
+        voluptas cum praesentium sed, unde explicabo fugit ab incidunt
+        perferendis placeat sint! Ea nulla expedita quis illo distinctio,
+        mollitia corporis consequuntur provident officia laboriosam dolores sed
+        quam aliquam quisquam autem illum ipsum in pariatur ratione voluptates!
+        Commodi, aperiam quidem. Ut, nobis nesciunt? Nihil nisi debitis labore
+        sit deleniti alias cupiditate quas nemo repudiandae. Vel ipsam veniam,
+        fuga dolore at minus modi incidunt nisi sapiente illum nam similique a
+        perferendis facilis quos assumenda. Doloremque minus tempora obcaecati
+        facere eum quidem velit laboriosam nulla eaque laborum reiciendis
+        repellendus veritatis, quo doloribus incidunt molestias? Assumenda,
+        dolores? Excepturi beatae at numquam, qui rem odit deleniti doloribus?
+        Neque consequatur quia error est delectus perferendis rerum illo,
+        corporis voluptatibus labore saepe ea sed totam similique numquam
+        consectetur tempore aliquid temporibus. Odio distinctio veniam dolore
+        sequi hic. Quidem, corporis? Sint consequatur quis quas, repellendus
+        soluta nam voluptatum voluptatem? Inventore nam eaque explicabo fugit,
+        ipsa delectus beatae, tenetur aliquam harum nemo laborum nesciunt
+        officia corporis distinctio accusantium amet voluptate rerum? Obcaecati
+        sunt deleniti esse iure fugiat, reprehenderit maiores perferendis quas
+        accusantium corrupti repellendus. Ducimus, incidunt consectetur,
+        officiis porro ratione velit ad quis exercitationem mollitia labore iste
+        ex obcaecati? Et, quae.
+      </p>
+    </div>
+  </section>
+  <section class="h-auto scroll-mt-20 pt-5 container" id="consultations">
+    <h2
+      class="font-playfair text-center md:text-left text-3xl lg:text-4xl font-medium text-secondary pb-3 pt-5 md:pt-0"
+    >
+      Consultations
+    </h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 pb-10">
+      <!-- Card 1 -->
+      <div class="col-span-1">
+        <Image
+          src={klimt}
+          alt="tableau de Gustav Klimt illustrant Athena et la philosophie dans la supervision"
+          title="Athena de Gustav Klimt"
+          class="w-full aspect-square object-cover mb-3 rounded-xl md:rounded-none"
+        />
+
+        <div
+          class="bg-tertiary/90 text-white md:hover:scale-105 transition-transform duration-300 rounded-xl md:rounded-none"
+        >
+          <h3
+            class="font-playfair lg:text-3xl text-2xl text-center lg:text-left font-medium pl-5 pt-1 lg:h-[9vh]"
+          >
+            Supervision
+          </h3>
+
+          <details class="group">
+            <summary
+              class="flex cursor-pointer items-end justify-center [&_::-webkit-details-marker]:hidden"
+            >
+              <svg
+                class="w-15 h-15 transition-transform duration-300 group-open:-rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+
+            <div class="px-5 pb-5">
+              <p class="font-light font-opensans md:text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci doloribus pariatur temporibus eius beatae dicta,
+                quisquam ullam magnam saepe. Perspiciatis laborum blanditiis
+                consequatur excepturi itaque beatae, pariatur rerum amet minima.
+                Laborum suscipit ab autem porro omnis earum id consequuntur,
+                mollitia, quis nisi maiores! Ut similique nobis suscipit
+                voluptate non id ducimus quae magnam praesentium asperiores, a
+                consectetur provident magni ullam. Voluptatum non tempore vel
+                maiores minima natus fuga aspernatur quos quae nihil
+                exercitationem quam dignissimos tempora quis inventore quas
+                veritatis, delectus iusto! Quas ab, obcaecati quos possimus
+                necessitatibus laboriosam a. Ratione quam, esse quod, eligendi
+                ipsam dignissimos, laborum officia deserunt aut eveniet iste!
+                Neque nobis libero expedita reprehenderit, explicabo modi ipsa
+                ducimus eaque, consequuntur provident rerum enim non error
+                totam. Libero corporis, eveniet, cum pariatur distinctio aut sit
+                quod tempora adipisci labore exercitationem voluptas odio omnis
+                recusandae perspiciatis voluptatem! Rem, facere. Fugiat
+                excepturi voluptatibus reprehenderit, nihil saepe neque dicta
+                quidem!
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-span-1">
+        <Image
+          src={rodin}
+          alt="le penseur de Rodin"
+          title="Le Penseur de Rodin, symbole de la pensée philosophique"
+          class="w-full aspect-square object-cover mb-3 rounded-xl md:rounded-none"
+        />
+
+        <div
+          class="bg-secondary/90 text-white md:hover:scale-105 transition-transform duration-300 rounded-xl md:rounded-none"
+        >
+          <h3
+            class="font-playfair lg:text-3xl text-2xl text-center lg:text-left font-medium pl-5 pt-1 lg:h-[9vh]"
+          >
+            Entretiens Philosophiques à visée thérapeutique
+          </h3>
+
+          <details class="group">
+            <summary
+              class="flex cursor-pointer justify-center [&_::-webkit-details-marker]:hidden"
+            >
+              <svg
+                class="w-15 h-15 transition-transform duration-300 group-open:-rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+
+            <div class="px-5 pb-5">
+              <p class="font-light font-opensans md:text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,
+                fugiat accusantium facilis et dolorem quisquam consequuntur
+                recusandae quas dolorum numquam consectetur, eveniet accusamus
+                magnam exercitationem soluta consequatur dolore repellat id.
+                Consectetur minus eligendi inventore laborum. Fuga veritatis
+                voluptas animi repellat! Et, sequi! Omnis, enim labore? Minima
+                perspiciatis corporis sequi, saepe, dolore inventore nobis qui
+                omnis quia vel quam magnam vitae. Fuga minima, enim numquam
+                accusamus voluptas error? Facilis fugiat cum eveniet adipisci
+                obcaecati dolore inventore non natus. Excepturi ab eaque
+                dolorem, aliquid nulla, neque tempora, facere dicta officia
+                asperiores iusto. Officiis debitis perspiciatis deleniti rerum
+                praesentium nam facilis ipsam. Ad atque et, iure inventore
+                facilis quae sequi dolores. Repudiandae saepe sapiente eum dicta
+                tenetur beatae deleniti inventore et, nisi ipsam?
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-span-1">
+        <Image
+          src={botticeli}
+          alt="Tableau de Botticelli illustrant le jugement moral"
+          title="La calomnie d'Apelle de Botticelli"
+          class="w-full aspect-square object-cover mb-3 rounded-xl md:rounded-none"
+        />
+
+        <div
+          class="bg-tertiary/90 text-white md:hover:scale-105 transition-transform duration-300 rounded-xl md:rounded-none"
+        >
+          <h3
+            class="font-playfair lg:text-3xl text-2xl text-center lg:text-left font-medium pl-5 pt-1 lg:h-[9vh]"
+          >
+            Intervention en entreprise
+          </h3>
+
+          <details class="group">
+            <summary
+              class="flex cursor-pointer justify-center [&_::-webkit-details-marker]:hidden"
+            >
+              <svg
+                class="w-15 h-15 transition-transform duration-300 group-open:-rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+
+            <div class="px-5 pb-5">
+              <p class="font-light font-opensans md:text-justify">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
+                maxime ad rerum repudiandae voluptatibus quae provident!
+                Similique deleniti quasi neque tempora, nemo, soluta blanditiis
+                inventore fugiat itaque vel velit minus! Consequuntur adipisci
+                ex sunt possimus esse laudantium, inventore culpa. Magnam
+                tenetur eligendi, nemo sequi magni labore modi neque amet,
+                asperiores, voluptatum voluptatibus autem. Recusandae, tenetur
+                ipsum nulla cumque quidem molestias! Libero voluptatum adipisci
+                nemo ducimus minima obcaecati. Veritatis harum et exercitationem
+                necessitatibus? Exercitationem ipsam laudantium, ullam saepe
+                nostrum, tenetur ad unde sapiente illo quibusdam reprehenderit
+                modi esse cupiditate veniam iure. Repellendus ullam temporibus
+                eveniet quisquam amet, consectetur impedit modi officia quasi
+                totam itaque, accusamus veritatis possimus perferendis minima
+                et, reprehenderit odio unde? Reprehenderit voluptates pariatur
+                laudantium dolorum quos vel iste. Delectus, nobis, accusamus
+                amet odio molestias enim ipsum aliquam minima assumenda rem
+                dolore ut vel veniam quis veritatis. Odit nemo, assumenda
+                perferendis officiis ducimus perspiciatis quasi nostrum et
+                eligendi ab!
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="w-full bg-tertiary md:h-[35vh] flex flex-col justify-center container"
+  >
+    <h2
+      class="text-center text-3xl md:text-4xl text-white font-medium font-playfair py-5"
+    >
+      Contactez-moi
+    </h2>
+    <p class="text-center text-white font-light font-opensans">
+      N’hésitez pas à réserver un créneau, je répondrai à toutes vos questions
+      avec plaisir.
+    </p>
+    <div class="text-center border-secondary py-10">
+      <a
+        href="contact"
+        class="px-15 py-3 bg-secondary text-white border-primary hover:bg-secondary/50 border-2 font-medium font-opensans transition-colors duration-300"
+      >
+        Prendre rendez-vous
+      </a>
+    </div>
+  </section>
+  <div class="relative w-full h-[30vh]">
+    <iframe
+      src="https://www.google.com/maps?q=10+Rue+d'Alsace+Lorraine,+31000+Toulouse&output=embed"
+      title="Map gps - adresse de Quelqu'un pour consultation"
+      class="w-full h-full"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</Layout>
