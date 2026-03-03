@@ -1,4 +1,4 @@
-Site vitrine de Melissa Laroueg fait par Mehdi de Viguerie avec Astro, Tailwind et JavaScript.
+Site vitrine pour psychologue fait par Yannick de Viguerie de XYZ.Dev avec Astro, Tailwind et JavaScript.
 
 # Astro Starter Kit: Minimal
 

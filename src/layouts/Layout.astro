@@ -44,8 +44,18 @@ const fullTitle = title
 
 <script>
   // Gestion du menu de navigation pour souligner la section active
+  const path = window.location.pathname;
+
+  if (path === "/contact") {
+    const contactLink = document.querySelector('nav a[href="/contact"]');
+    contactLink?.classList.add(
+      "underline",
+      "underline-offset-4",
+      "decoration-tertiary",
+    );
+  }
+
   const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll("nav a[data-link]");
 
   function onScroll() {
     let current = "";
@@ -60,15 +70,25 @@ const fullTitle = title
     const navLinks = document.querySelectorAll<HTMLAnchorElement>("nav a");
 
     navLinks.forEach((link) => {
-      link.classList.remove("underline");
+      link.classList.remove(
+        "underline",
+        "underline-offset-4",
+        "decoration-tertiary",
+      );
       if (link.dataset.link === current) {
-        link.classList.add("underline");
+        link.classList.add(
+          "underline",
+          "underline-offset-4",
+          "decoration-tertiary",
+        );
       }
     });
   }
 
-  window.addEventListener("scroll", onScroll);
-  onScroll(); // pour le premier chargement
+  if (window.location.pathname === "/" && sections.length) {
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
 
   // Gestion de l'accordéon pour n'ouvrir qu'une seule card à la fois
   document.addEventListener("DOMContentLoaded", () => {
