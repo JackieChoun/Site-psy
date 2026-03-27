@@ -1,4 +1,4 @@
-Site vitrine pour psychologue fait par Yannick de Viguerie de XYZ.Dev avec Astro, Tailwind et JavaScript.
+Exemple d'un potentiel site vitrine pour psychologue fait par Yannick de Viguerie de XYZ.Dev avec Astro, Tailwind et JavaScript.
 
 # Astro Starter Kit: Minimal
 
